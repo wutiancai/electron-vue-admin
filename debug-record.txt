@@ -1,0 +1,1 @@
+如果npm安装包的时候报错unable to verify the first certificate,将package.json里的electron版本7.1.14/10.1.1改为6.0.1或1.7.5

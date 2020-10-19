@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="description" content="Description">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<!--  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/lib/themes/vue.css">-->
+  <link rel="stylesheet" href="css/vue.css">
+
+<!--  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/external-script.min.js"></script>-->
+<!--  <script src="//cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>-->
+
+</head>
+<body>
+  <div id="app"></div>
+<!--  <div id="ttest">$$\sum\limits_{i=0}^{\infty} \frac{1}{n^2}$$</div>-->
+<!--  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>-->
+<!--  <script type="text/javascript" src="js/oldMathJax.js"></script>-->
+<!--  <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>-->
+  <script src="js/docsify.min.js"></script>
+  <script type="text/javascript" src="./node_modules/mathjax-electron/MathJax-2.7.5/MathJax.js?config=nteract"></script>
+  <script>
+    window.$docsify = {
+      name: '',
+      loadSidebar: true,
+      // subMaxLevel:6,
+      repo: '',
+      executeScript: true,
+      alias: {
+        '/.*/_sidebar.md': '/_sidebar.md'
+      }
+    }
+    // const container = document.createElement("div");
+    // container.innerHTML = "$$\\sum\\limits_{i=0}^{\\infty} \\frac{1}{n^2}$$";
+    // const container = document.getElementById("ttest")
+    // MathJax.Hub.Queue(["Typeset", MathJax.Hub, container]);
+    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+    var math = document.getElementsByClassName("entry-content")[0];
+    MathJax.Hub.Queue(["Typeset",MathJax.Hub,math]);
+  </script>
+
+  <script>
+    function loadJS( url, callback ){
+
+      var script = document.createElement('script'),
+
+              fn = callback || function(){};
+
+      script.type = 'text/javascript';
+
+
+
+      //IE
+
+      if(script.readyState){
+
+        script.onreadystatechange = function(){
+
+          if( script.readyState == 'loaded' || script.readyState == 'complete' ){
+
+            script.onreadystatechange = null;
+
+            fn();
+
+          }
+
+        };
+
+      }else{
+
+        //其他浏览器
+
+        script.onload = function(){
+
+          fn();
+
+        };
+
+      }
+
+      script.src = url;
+
+      document.getElementsByTagName('head')[0].appendChild(script);
+
+    }
+
+    window.addEventListener("hashchange", myFunction);
+    function myFunction() {
+      loadJS('./node_modules/mathjax-electron/MathJax-2.7.5/MathJax.js?config=nteract',function(){
+        console.log(1121);
+        MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+        // entry-content是文章页的内容div的class
+        var math = document.getElementsByClassName("entry-content")[0];
+        setTimeout(function () {
+          MathJax.Hub.Queue(["Typeset",MathJax.Hub,math]);
+        }, 200)
+        MathJax.Hub.Queue(["Typeset",MathJax.Hub,math]);
+      });
+    }
+  </script>
+
+</body>
+</html>
