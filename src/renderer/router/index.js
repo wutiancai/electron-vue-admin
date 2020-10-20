@@ -56,18 +56,18 @@ export const constantRoutes = [
             }
         ]
     },
-    {
-        path: '/datapack1',
-        component: Layout,
-        children: [
-            {
-                path: 'datapack',
-                name: 'datapack',
-                // component: () => import('@/views/datapack/datapack'),
-                meta: {title: '文件', icon: 'el-icon-folder', keepAlive: true}
-            }
-        ]
-    },
+    // {
+    //     path: '/datapack1',
+    //     component: Layout,
+    //     children: [
+    //         {
+    //             path: 'datapack',
+    //             name: 'datapack',
+    //             // component: () => import('@/views/datapack/datapack'),
+    //             meta: {title: '文件', icon: 'el-icon-folder', keepAlive: true}
+    //         }
+    //     ]
+    // },
     {
         path: '/datapack2',
         component: Layout,
@@ -80,18 +80,18 @@ export const constantRoutes = [
             }
         ]
     },
-    {
-        path: '/datapack3',
-        component: Layout,
-        children: [
-            {
-                path: 'datapack',
-                name: 'datapack',
-                // component: () => import('@/views/datapack/datapack'),
-                meta: {title: '操作', icon: 'el-icon-s-cooperation', keepAlive: true}
-            }
-        ]
-    },
+    // {
+    //     path: '/datapack3',
+    //     component: Layout,
+    //     children: [
+    //         {
+    //             path: 'datapack',
+    //             name: 'datapack',
+    //             // component: () => import('@/views/datapack/datapack'),
+    //             meta: {title: '操作', icon: 'el-icon-s-cooperation', keepAlive: true}
+    //         }
+    //     ]
+    // },
     // {
     //     path: '/datapack4',
     //     component: Layout,
@@ -107,12 +107,19 @@ export const constantRoutes = [
     {
         path: '/datapack5',
         component: Layout,
+        meta: {title: '建模', icon: 'el-icon-s-data', keepAlive: true},
         children: [
             {
                 path: 'datapack',
                 name: 'datapack',
                 // component: () => import('@/views/datapack/datapack'),
-                meta: {title: '数据统计', icon: 'el-icon-s-data', keepAlive: true}
+                meta: {title: '缺陷处理', icon: '', keepAlive: true}
+            },
+            {
+                path: 'datapack1',
+                name: 'datapack',
+                // component: () => import('@/views/datapack/datapack'),
+                meta: {title: '模板配置', icon: '', keepAlive: true}
             }
         ]
     },
