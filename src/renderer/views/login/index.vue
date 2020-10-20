@@ -22,7 +22,7 @@
         <h3 class="title">“慧脑”机器学习通用算法平台</h3>
       </div>-->
       <div class="title-container" style="text-align: center;top:20px">
-        <h1 class="title" style="font-size: 75px;color: whitesmoke">机器学习算法平台</h1>
+        <h1 class="title" style="font-size: 75px;color: whitesmoke">视觉检测平台</h1>
       </div>
       <div class="title-container" style="text-align: center;top: -10px">
 <!--        <img src="@/assets/casia1.png" class="user-avatar" style="width: 240px;height: 60px;margin-top: -18px">-->
