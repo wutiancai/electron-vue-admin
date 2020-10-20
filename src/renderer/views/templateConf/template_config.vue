@@ -4,6 +4,10 @@
         <el-row :gutter="10">
             <el-col>
                 <div class="grid-content bg-purple">
+                    <el-button
+                            size="medium "
+                            icon="el-icon-edit" class="table-opt-font" type="text" title="编辑">
+                    </el-button>
                     <span>加载模板成功,模板路径为D:/aaa/bbb/ccc.xml</span>
                 </div>
             </el-col>
