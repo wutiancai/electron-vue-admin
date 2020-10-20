@@ -1,5 +1,5 @@
 <template>
-  <div class="navbar">
+  <div class="navbar"style="background:#304156;color:#BFCBD9">
     <hamburger :is-active="sidebar.opened" class="hamburger-container" @toggleClick="toggleSideBar" />
 
     <breadcrumb class="breadcrumb-container" />
@@ -19,7 +19,7 @@
         <div ><!--class="avatar-wrapper"-->
 
 <!--          <img :src="avatar+'?imageView2/1/w/80/h/80'" class="user-avatar">-->
-          <i class="el-icon-caret-bottom" />
+          <i class="el-icon-caret-bottom" style="color: #BFCBD9;"/>
         </div>
         <el-dropdown-menu slot="dropdown" class="user-dropdown">
 <!--          <router-link to="/">-->
