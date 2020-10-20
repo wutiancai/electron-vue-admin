@@ -117,8 +117,8 @@ export const constantRoutes = [
             },
             {
                 path: 'datapack1',
-                name: 'datapack',
-                // component: () => import('@/views/datapack/datapack'),
+                name: 'datapack1',
+                component: () => import('@/views/templateConf/template_config'),
                 meta: {title: '模板配置', icon: '', keepAlive: true}
             }
         ]
