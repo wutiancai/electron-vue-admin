@@ -31,199 +31,199 @@ import Layout from '@/layout'
  * all roles can be accessed
  */
 export const constantRoutes = [
-  {
-    path: '/login',
-    component: () => import('@/views/login/index'),
-    hidden: true
-  },
-
-  {
-    path: '/404',
-    component: () => import('@/views/404'),
-    hidden: true
-  },
-
-  {
-    path: '/',
-    component: Layout,
-    meta: {title: '运行管理', icon: 'el-icon-collection-tag', keepAlive: true},
-    children: [
-      {
-        path: 'annotation',
-        name: 'annotation',
-        // component: () => import('@/views/annotation/index'),
-        meta: {title: '运行管理', icon: 'el-icon-collection-tag', keepAlive: true}
-      }
-    ]
-  },
-  {
-    path: '/datapack',
-    component: Layout,
-    children: [
-      {
-        path: 'datapack',
-        name: 'datapack',
-        // component: () => import('@/views/datapack/datapack'),
-        meta: { title: '文件', icon: 'el-icon-folder', keepAlive: true}
-      }
-    ]
-  },
-     {
-    path: '/datapack',
-    component: Layout,
-    children: [
-      {
-        path: 'datapack',
-        name: 'datapack',
-        // component: () => import('@/views/datapack/datapack'),
-        meta: { title: '工具', icon: 'el-icon-folder', keepAlive: true}
-      }
-    ]
-  },
-     {
-    path: '/datapack',
-    component: Layout,
-    children: [
-      {
-        path: 'datapack',
-        name: 'datapack',
-        // component: () => import('@/views/datapack/datapack'),
-        meta: { title: '操作', icon: 'el-icon-folder', keepAlive: true}
-      }
-    ]
-  },
-     {
-    path: '/datapack',
-    component: Layout,
-    children: [
-      {
-        path: 'datapack',
-        name: 'datapack',
-        // component: () => import('@/views/datapack/datapack'),
-        meta: { title: '运行控制', icon: 'el-icon-folder', keepAlive: true}
-      }
-    ]
-  },
-     {
-    path: '/datapack',
-    component: Layout,
-    children: [
-      {
-        path: 'datapack',
-        name: 'datapack',
-        // component: () => import('@/views/datapack/datapack'),
-        meta: { title: '数据统计', icon: 'el-icon-folder', keepAlive: true}
-      }
-    ]
-  },
     {
-    path: '/datapack',
-    component: Layout,
-    children: [
-      {
-        path: 'datapack',
-        name: 'datapack',
-        // component: () => import('@/views/datapack/datapack'),
-        meta: { title: '用户管理', icon: 'el-icon-folder', keepAlive: true}
-      }
-    ]
-  },
-  // {
-  //   path: '/train',
-  //   component: Layout,
-  //   redirect: '/task_train',
-  //   name: 'Example',
-  //   meta: { title: '模型管理', icon: 'el-icon-set-up' },
-  //   children: [
-  //     {
-  //       path: 'task_train',
-  //       name: 'task_train',
-  //       // component: () => import('@/views/table/index'),
-  //       component: () => import('@/views/task/task_train'),
-  //       meta: { title: '模型训练', icon: 'table', keepAlive: true}
-  //     },
-  //     {
-  //       path: 'task_detection',
-  //       name: 'task_detection',
-  //       // component: () => import('@/views/tree/index'),
-  //       component: () => import('@/views/task/task_detection'),
-  //       meta: { title: '模型评测', icon: 'tree', keepAlive: true}
-  //     }
-  //   ]
-  // },
+        path: '/login',
+        component: () => import('@/views/login/index'),
+        hidden: true
+    },
 
-  // {
-  //   path: '/deployment',
-  //   component: Layout,
-  //   children: [
-  //     {
-  //       path: 'deployment_model',
-  //       name: 'Form',
-  //       component: () => import('@/views/deployment/deployment_model'),
-  //       meta: { title: '模型部署', icon: 'el-icon-mouse', keepAlive: true}
-  //     }
-  //   ]
-  // },
+    {
+        path: '/404',
+        component: () => import('@/views/404'),
+        hidden: true
+    },
 
-  // {
-  //   path: '/form',
-  //   component: Layout,
-  //   children: [
-  //     {
-  //       path: 'index',
-  //       name: 'Form',
-  //       component: () => import('@/views/form/index'),
-  //       meta: { title: '帮助', icon: 'el-icon-warning-outline'}
-  //     }
-  //   ]
-  // },
-  // {
-  //   path: '/form1',
-  //   component: Layout,
-  //   children: [
-  //     {
-  //       path: 'index1',
-  //       name: 'Form1',
-  //       component: () => import('@/views/form/index'),
-  //       meta: { title: '关于', icon: 'el-icon-more' }
-  //     }
-  //   ]
-  // },
- /* {
-    path: '/form',
-    component: Layout,
-    children: [
-      {
-        path: 'index',
-        name: 'Form',
-        component: () => import('@/views/form/index'),
-        meta: { title: 'Form', icon: 'form' }
-      }
-    ]
-  },*/
+    {
+        path: '/',
+        component: Layout,
+        meta: {title: '运行管理', icon: 'el-icon-collection-tag', keepAlive: true},
+        children: [
+            {
+                path: 'annotation',
+                name: 'annotation',
+                // component: () => import('@/views/annotation/index'),
+                meta: {title: '运行管理', icon: 'el-icon-open', keepAlive: true}
+            }
+        ]
+    },
+    {
+        path: '/datapack1',
+        component: Layout,
+        children: [
+            {
+                path: 'datapack',
+                name: 'datapack',
+                // component: () => import('@/views/datapack/datapack'),
+                meta: {title: '文件', icon: 'el-icon-folder', keepAlive: true}
+            }
+        ]
+    },
+    {
+        path: '/datapack2',
+        component: Layout,
+        children: [
+            {
+                path: 'datapack',
+                name: 'datapack',
+                // component: () => import('@/views/datapack/datapack'),
+                meta: {title: '工具', icon: 'el-icon-s-tools', keepAlive: true}
+            }
+        ]
+    },
+    {
+        path: '/datapack3',
+        component: Layout,
+        children: [
+            {
+                path: 'datapack',
+                name: 'datapack',
+                // component: () => import('@/views/datapack/datapack'),
+                meta: {title: '操作', icon: 'el-icon-s-cooperation', keepAlive: true}
+            }
+        ]
+    },
+    // {
+    //     path: '/datapack4',
+    //     component: Layout,
+    //     children: [
+    //         {
+    //             path: 'datapack',
+    //             name: 'datapack',
+    //             // component: () => import('@/views/datapack/datapack'),
+    //             meta: {title: '运行控制', icon: 'el-icon-s-operation', keepAlive: true}
+    //         }
+    //     ]
+    // },
+    {
+        path: '/datapack5',
+        component: Layout,
+        children: [
+            {
+                path: 'datapack',
+                name: 'datapack',
+                // component: () => import('@/views/datapack/datapack'),
+                meta: {title: '数据统计', icon: 'el-icon-s-data', keepAlive: true}
+            }
+        ]
+    },
+    {
+        path: '/datapack6',
+        component: Layout,
+        children: [
+            {
+                path: 'datapack',
+                name: 'datapack',
+                // component: () => import('@/views/datapack/datapack'),
+                meta: {title: '用户管理', icon: 'el-icon-s-custom', keepAlive: true}
+            }
+        ]
+    },
+    // {
+    //   path: '/train',
+    //   component: Layout,
+    //   redirect: '/task_train',
+    //   name: 'Example',
+    //   meta: { title: '模型管理', icon: 'el-icon-set-up' },
+    //   children: [
+    //     {
+    //       path: 'task_train',
+    //       name: 'task_train',
+    //       // component: () => import('@/views/table/index'),
+    //       component: () => import('@/views/task/task_train'),
+    //       meta: { title: '模型训练', icon: 'table', keepAlive: true}
+    //     },
+    //     {
+    //       path: 'task_detection',
+    //       name: 'task_detection',
+    //       // component: () => import('@/views/tree/index'),
+    //       component: () => import('@/views/task/task_detection'),
+    //       meta: { title: '模型评测', icon: 'tree', keepAlive: true}
+    //     }
+    //   ]
+    // },
+
+    // {
+    //   path: '/deployment',
+    //   component: Layout,
+    //   children: [
+    //     {
+    //       path: 'deployment_model',
+    //       name: 'Form',
+    //       component: () => import('@/views/deployment/deployment_model'),
+    //       meta: { title: '模型部署', icon: 'el-icon-mouse', keepAlive: true}
+    //     }
+    //   ]
+    // },
+
+    // {
+    //   path: '/form',
+    //   component: Layout,
+    //   children: [
+    //     {
+    //       path: 'index',
+    //       name: 'Form',
+    //       component: () => import('@/views/form/index'),
+    //       meta: { title: '帮助', icon: 'el-icon-warning-outline'}
+    //     }
+    //   ]
+    // },
+    // {
+    //   path: '/form1',
+    //   component: Layout,
+    //   children: [
+    //     {
+    //       path: 'index1',
+    //       name: 'Form1',
+    //       component: () => import('@/views/form/index'),
+    //       meta: { title: '关于', icon: 'el-icon-more' }
+    //     }
+    //   ]
+    // },
+    /* {
+       path: '/form',
+       component: Layout,
+       children: [
+         {
+           path: 'index',
+           name: 'Form',
+           component: () => import('@/views/form/index'),
+           meta: { title: 'Form', icon: 'form' }
+         }
+       ]
+     },*/
 
 
 
-  // 404 page must be placed at the end !!!
-  { path: '*', redirect: '/404', hidden: true }
+    // 404 page must be placed at the end !!!
+    {path: '*', redirect: '/404', hidden: true}
 ]
 
 const createRouter = () => new Router({
-  // mode: 'history', // require service support
-  scrollBehavior: () => ({ y: 0 }),
-  routes: constantRoutes
+    // mode: 'history', // require service support
+    scrollBehavior: () => ({y: 0}),
+    routes: constantRoutes
 })
 
 const router = createRouter()
 
 // Detail see: https://github.com/vuejs/vue-router/issues/1234#issuecomment-357941465
 export function resetRouter() {
-  const newRouter = createRouter()
-  router.matcher = newRouter.matcher // reset router
+    const newRouter = createRouter()
+    router.matcher = newRouter.matcher // reset router
 }
 
 // export default router
 export default new Router({
-  scrollBehavior: () => ({ y: 0 }),
-  routes: constantRoutes
+    scrollBehavior: () => ({y: 0}),
+    routes: constantRoutes
 })
