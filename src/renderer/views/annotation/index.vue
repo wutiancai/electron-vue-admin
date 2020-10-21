@@ -1,7 +1,7 @@
 <template>
     <div >
 <!--        <html-panel :url.asyc="url1"></html-panel>--><!--onload="this.height=testframe.document.body.scrollHeight"-->
-        <iframe id="testframe" name="testframe" onload="this.height=document.body.scrollHeight-60" src="static/via.html" width="100%"  frameborder="0" scrolling="auto"></iframe>
+<!--        <iframe id="testframe" name="testframe" onload="this.height=document.body.scrollHeight-60" src="static/via.html" width="100%"  frameborder="0" scrolling="auto"></iframe>-->
     </div>
 </template>
 

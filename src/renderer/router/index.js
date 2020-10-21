@@ -49,9 +49,9 @@ export const constantRoutes = [
         meta: {title: '运行管理', icon: 'el-icon-collection-tag', keepAlive: true},
         children: [
             {
-                path: 'annotation',
-                name: 'annotation',
-                // component: () => import('@/views/annotation/index'),
+                path: 'runing',
+                name: 'runing',
+                component: () => import('@/views/runing/runing'),
                 meta: {title: '运行管理', icon: 'el-icon-open', keepAlive: true}
             }
         ]

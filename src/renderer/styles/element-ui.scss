@@ -190,3 +190,9 @@
 .xterm-rows  div{
   overflow: unset!important;
 }
+/*运行显示*/
+.horizon_layout {
+  height:calc(100vh - 240px);
+  border:1.2px solid #E4E7ED
+}
+
