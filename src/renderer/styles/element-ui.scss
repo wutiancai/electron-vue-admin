@@ -192,7 +192,20 @@
 }
 /*运行显示*/
 .horizon_layout {
-  height:calc(100vh - 240px);
+  height:calc(100vh - 250px);
   border:1.2px solid #E4E7ED
+}
+.app-container-tab {
+  //margin-top: -20px;
+  //margin-left: -6px;
+  padding: 0px 10px
+}
+.border-lgray {
+  border:1.2px solid #E4E7ED
+}
+.underline-font {
+  border-bottom:1px solid gray;
+  display:inline-block;
+  width:40px;
 }
 

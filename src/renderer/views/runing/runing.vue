@@ -1,17 +1,6 @@
 <template>
-    <div class="app-container">
-        <!--        <el-main>-->
-        <el-row :gutter="10">
-            <el-col>
-                <div class="grid-content bg-purple">
-                    <el-button
-                            size="medium "
-                            icon="el-icon-edit" class="table-opt-font" type="text" title="编辑">
-                    </el-button>
-                    <span>加载模板成功,模板路径为D:/aaa/bbb/ccc.xml</span>
-                </div>
-            </el-col>
-        </el-row>
+    <div class="app-container-tab">
+<!--        <div class="app-container-top0">-->
         <el-tabs v-model="activeName" @tab-click="handleClick">
             <el-tab-pane label="数据处理" name="first">
                 <el-row :gutter="0"  id="box">
@@ -74,7 +63,70 @@
 
             </el-tab-pane>
         </el-tabs>
-        <!--        </el-main>-->
+        <el-row :gutter="6">
+            <el-col :span="10">
+                <div class="border-lgray" style="padding:4px">
+                    <span>结果:</span>
+                    <span class="badge badge-pill badge-success">ok</span>
+                    <span class="badge badge-pill badge-success">ok</span>
+                    <span class="badge badge-pill badge-success">ok</span>
+                    <span  class="badge badge-pill badge-danger">ng</span>
+                    <span  class="badge badge-pill badge-danger">ng</span>
+                    <span class="badge badge-pill badge-success">ok</span>
+                   <span  class="badge badge-pill badge-danger">ng</span>
+
+                </div>
+
+            </el-col>
+            <el-col :span="10">
+                <div style="padding:4px">
+                    <span>总数:</span><!--<span class="underline-font"></span>-->
+                    <el-input size="mini"
+                              style="width:46px"
+                              v-model="totalCount"
+                              >
+                    </el-input>
+                    <span>ok数:</span><!--<span class="underline-font"></span>-->
+                    <el-input size="mini"
+                            style="width:46px"
+                              v-model="totalCount"
+                            >
+                    </el-input>
+                    <span>良品率:</span>
+                    <span style="display:inline-block">
+                        <div style="width:100px">
+                            <el-progress style="width:100px" :percentage="99" ></el-progress>
+                        </div>
+
+                    </span>
+<!--                    <el-button icon="el-icon-search" size="mini" circle></el-button>-->
+                    <span style="margin-left: -14px;">
+                        <el-button size="mini" style="padding:5px 9px" round>清空</el-button>
+                    </span>
+                </div>
+<!--                <el-form ref="form" :inline="true" class="demo-form-inline" label-width="" size="mini">-->
+<!--                        <el-form-item label="总数">-->
+<!--                            <el-input ></el-input>-->
+<!--                        </el-form-item>-->
+<!--                    <el-form-item label="ok数">-->
+<!--                            <el-input ></el-input>-->
+<!--                        </el-form-item>-->
+<!--                    </el-form>-->
+            </el-col>
+        </el-row>
+        <el-row :gutter="10">
+            <el-col>
+                <div class="grid-content bg-purple">
+                    <el-button
+                            size="medium "
+                            icon="el-icon-edit" class="table-opt-font" type="text" title="编辑">
+                    </el-button>
+                    <span>加载模板成功,模板路径为D:/aaa/bbb/ccc.xml</span>
+                </div>
+            </el-col>
+        </el-row>
+<!--        </div>-->
+
     </div>
 </template>
 
@@ -83,6 +135,8 @@
         name: "template_config",
         data() {
             return {
+                totalCount:'',
+                okCount:'',
                 treeData1: [{
                     id: 1,
                     label: "一级 1",
@@ -184,7 +238,7 @@
 
     #resize {
         width: 2px;
-        height:calc(100vh - 240px);
+        height:calc(100vh - 250px);
         cursor: w-resize;
         float: left;
         border: 1px solid #E4E7ED;
