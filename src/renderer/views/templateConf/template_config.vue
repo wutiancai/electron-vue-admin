@@ -13,7 +13,31 @@
             </el-col>
         </el-row>
         <el-tabs v-model="activeName" @tab-click="handleClick">
-            <el-tab-pane label="流程管理" name="first">用户管理</el-tab-pane>
+            <el-tab-pane label="流程管理" name="first">
+                <div class="tree-drag">
+                    <el-tree
+                            :data="treeData1"
+                            ref="tree1"
+                            class="tree"
+                            node-key="id"
+                            draggable
+                            default-expand-all
+                            :allow-drop="returnFalse"
+                            @node-drag-start="handleDragstart"
+                            @node-drag-end="handleDragend"
+                    ></el-tree>
+                    <el-tree
+                            :data="treeData2"
+                            ref="tree2"
+                            class="tree"
+                            node-key="id"
+                            draggable
+                            default-expand-all
+                            :allow-drop="returnTrue"
+                    ></el-tree>
+                </div>
+
+            </el-tab-pane>
             <el-tab-pane label="图像源" name="second">
                 <el-row class="tac">
                     <el-col :span="6">
@@ -47,15 +71,64 @@
     export default {
         name: "template_config",
         data() {
-            return {}
+            return {
+                treeData1: [{
+                    id: 1,
+                    label: "一级 1",
+                    children: [{
+                        id: 4,
+                        label: "二级 1-1",
+                        children: [{id: 9, label: "三级 1-1-1"}]
+                    }],
+                }],
+                treeData2: [{
+                    id: 2,
+                    label: "一级 1",
+
+                }],
+                defaultProps: {
+                    children: 'children',
+                    label: 'label'
+                }
+            }
         },
-        beforeCreate () {
+        methods: {
+
+            handleDragstart(node, event) {
+                this.$refs.tree2.$emit('tree-node-drag-start', event, {node: node});
+            },
+            handleDragend(draggingNode, endNode, position, event) {
+                // 插入一个空节点用于占位
+                let emptyData = {id: (+new Date), children: []};
+                this.$refs.tree1.insertBefore(emptyData, draggingNode);
+
+                this.$refs.tree2.$emit('tree-node-drag-end', event);
+                this.$nextTick(() => {
+                    // 如果是移动到了当前树上，需要清掉空节点
+                    if (this.$refs.tree1.getNode(draggingNode.data)) {
+                        this.$refs.tree1.remove(emptyData);
+                    } else {
+                        // 如果移动到了别的树上，需要恢复该节点，并清掉空节点
+                        let data = JSON.parse(JSON.stringify(draggingNode.data));
+                        this.$refs.tree1.insertAfter(data, this.$refs.tree1.getNode(emptyData));
+                        this.$refs.tree1.remove(emptyData);
+                    }
+                })
+            },
+            returnTrue() {
+                return true;
+            },
+            returnFalse() {
+                return false;
+            }
+        },
+        beforeCreate() {
 
         },
         mounted() {
-            $("#templateImg").height(document.body.scrollHeight-160);
-             window.onresize = () => {
-                $("#templateImg").height(document.body.clientHeight-160);
+            $("#templateImg").height(document.body.scrollHeight - 160);
+            window.onresize = () => {
+                $("#templateImg").height(document.body.clientHeight - 160);
             };
         }
 
@@ -63,5 +136,11 @@
 </script>
 
 <style scoped>
-
+.tree {
+  display: inline-block;
+  vertical-align: top;
+  width: 40%;
+  height: 440px;
+  border: 1.2px solid #E4E7ED;
+}
 </style>
