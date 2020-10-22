@@ -110,9 +110,9 @@ export const constantRoutes = [
         meta: {title: '建模', icon: 'el-icon-s-data', keepAlive: true},
         children: [
             {
-                path: 'datapack',
-                name: 'datapack',
-                // component: () => import('@/views/datapack/datapack'),
+                path: 'defect_conf',
+                name: 'defect_conf',
+                component: () => import('@/views/templateConf/defect_conf'),
                 meta: {title: '缺陷处理', icon: '', keepAlive: true}
             },
             {
