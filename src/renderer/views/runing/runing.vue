@@ -1,9 +1,9 @@
 <template>
     <div class="app-container-tab">
-<!--        <div class="app-container-top0">-->
+        <!--        <div class="app-container-top0">-->
         <el-tabs v-model="activeName" @tab-click="handleClick">
             <el-tab-pane label="数据处理" name="first">
-                <el-row :gutter="0"  id="box">
+                <el-row :gutter="0" id="box">
                     <el-col :span="18" id="left">
                         <el-col :span="10">
                             <div class="card-header">
@@ -17,10 +17,12 @@
                             <div class="card-header" style="position:relative">
                                 <div>
                                     <span>缺陷信息</span>
-                                 <el-button type="primary" plain size="mini" style="position:absolute;right:4px;top:10px">解除冻结</el-button>
+                                    <el-button type="primary" plain size="mini"
+                                               style="position:absolute;right:4px;top:10px">解除冻结
+                                    </el-button>
                                 </div>
                             </div>
-                            <div class="horizon_layout" >
+                            <div class="horizon_layout">
 
                             </div>
                         </el-col>
@@ -28,10 +30,10 @@
 
                     <el-col :span="6" id="right">
                         <div class="card-header">
-                                运行日志
+                            运行日志
                         </div>
-                        <div  id="resize"></div>
-                        <div class="horizon_layout" >
+                        <div id="resize"></div>
+                        <div class="horizon_layout">
 
                         </div>
                     </el-col>
@@ -63,69 +65,89 @@
 
             </el-tab-pane>
         </el-tabs>
-        <el-row :gutter="6">
-            <el-col :span="10">
-                <div class="border-lgray" style="padding:4px">
-                    <span>结果:</span>
-                    <span class="badge badge-pill badge-success">ok</span>
-                    <span class="badge badge-pill badge-success">ok</span>
-                    <span class="badge badge-pill badge-success">ok</span>
-                    <span  class="badge badge-pill badge-danger">ng</span>
-                    <span  class="badge badge-pill badge-danger">ng</span>
-                    <span class="badge badge-pill badge-success">ok</span>
-                   <span  class="badge badge-pill badge-danger">ng</span>
-
-                </div>
-
+        <el-row :gutter="0">
+            <!--            <el-col :span="18">-->
+            <el-col :span="4">
+                <el-button type="success" style="width:100%;font-size:50px">OK</el-button>
             </el-col>
-            <el-col :span="10">
-                <div style="padding:4px">
-                    <span>总数:</span><!--<span class="underline-font"></span>-->
-                    <el-input size="mini"
-                              style="width:46px"
-                              v-model="totalCount"
-                              >
-                    </el-input>
-                    <span>ok数:</span><!--<span class="underline-font"></span>-->
-                    <el-input size="mini"
-                            style="width:46px"
-                              v-model="totalCount"
-                            >
-                    </el-input>
-                    <span>良品率:</span>
-                    <span style="display:inline-block">
+            <el-col :span="20">
+                <el-col :span="11">
+                    <div class="border-lgray" style="padding:4px">
+                        <span>结果:</span>
+                        <span class="badge badge-pill badge-success">ok</span>
+                        <span class="badge badge-pill badge-success">ok</span>
+                        <span class="badge badge-pill badge-success">ok</span>
+                        <span class="badge badge-pill badge-danger">ng</span>
+                        <span class="badge badge-pill badge-danger">ng</span>
+                        <span class="badge badge-pill badge-success">ok</span>
+                        <span class="badge badge-pill badge-danger">ng</span>
+
+                    </div>
+
+                </el-col>
+                <el-col :span="13">
+                    <div style="padding:4px">
+                        <span>总数:</span><!--<span class="underline-font"></span>-->
+                        <el-input size="mini"
+                                  style="width:46px"
+                                  v-model="totalCount"
+                        >
+                        </el-input>
+                        <span>ok数:</span><!--<span class="underline-font"></span>-->
+                        <el-input size="mini"
+                                  style="width:46px"
+                                  v-model="totalCount"
+                        >
+                        </el-input>
+                        <span>良品率:</span>
+                        <span style="display:inline-block">
                         <div style="width:100px">
-                            <el-progress style="width:100px" :percentage="99" ></el-progress>
+                            <el-progress style="width:100px" :percentage="99"></el-progress>
                         </div>
 
                     </span>
-<!--                    <el-button icon="el-icon-search" size="mini" circle></el-button>-->
-                    <span style="margin-left: -14px;">
+                        <!--                    <el-button icon="el-icon-search" size="mini" circle></el-button>-->
+                        <span><!--style="margin-left: -14px;"-->
                         <el-button size="mini" style="padding:5px 9px" round>清空</el-button>
                     </span>
-                </div>
-<!--                <el-form ref="form" :inline="true" class="demo-form-inline" label-width="" size="mini">-->
-<!--                        <el-form-item label="总数">-->
-<!--                            <el-input ></el-input>-->
-<!--                        </el-form-item>-->
-<!--                    <el-form-item label="ok数">-->
-<!--                            <el-input ></el-input>-->
-<!--                        </el-form-item>-->
-<!--                    </el-form>-->
-            </el-col>
-        </el-row>
-        <el-row :gutter="10">
-            <el-col>
+
+                    </div>
+
+                </el-col>
                 <div class="grid-content bg-purple">
                     <el-button
                             size="medium "
                             icon="el-icon-edit" class="table-opt-font" type="text" title="编辑">
                     </el-button>
-                    <span>加载模板成功,模板路径为D:/aaa/bbb/ccc.xml</span>
+                    <span>加载模板成功,模板路径为D:/aaa/bbb/cccccccccccccc/dddddddd/gggggggggggggggggggg.xml</span>
                 </div>
             </el-col>
+
+            <!--                <div class="grid-content bg-purple">-->
+            <!--                    <el-button-->
+            <!--                            size="medium "-->
+            <!--                            icon="el-icon-edit" class="table-opt-font" type="text" title="编辑">-->
+            <!--                    </el-button>-->
+            <!--                    <span>加载模板成功,模板路径为D:/aaa/bbb/cccccccccccccccc/ddddddddddddddddddddddddddddddd.xml</span>-->
+            <!--                </div>-->
+            <!--            </el-col>-->
+
+            <!--            <el-col :span="4">-->
+            <!--                <el-button type="success" style="width:100%;font-size:50px">OK</el-button>-->
+            <!--            </el-col>-->
         </el-row>
-<!--        </div>-->
+        <el-row :gutter="10" style="position:absolute;bottom:20px">
+            <el-col :span="24">
+                <!--                                <div class="grid-content bg-purple">-->
+                <!--                                    <el-button-->
+                <!--                                            size="medium "-->
+                <!--                                            icon="el-icon-edit" class="table-opt-font" type="text" title="编辑">-->
+                <!--                                    </el-button>-->
+                <!--                                    <span>加载模板成功,模板路径为D:/aaa/bbb/cccccccccccccc/dddddddd/gggggggggggggggggggg.xml</span>-->
+                <!--                                </div>-->
+            </el-col>
+        </el-row>
+        <!--        </div>-->
 
     </div>
 </template>
@@ -135,8 +157,8 @@
         name: "template_config",
         data() {
             return {
-                totalCount:'',
-                okCount:'',
+                totalCount: '',
+                okCount: '',
                 treeData1: [{
                     id: 1,
                     label: "一级 1",
@@ -195,7 +217,7 @@
             window.onresize = () => {
                 $("#templateImg").height(document.body.clientHeight - 160);
             };
-             var resize = document.getElementById("resize");
+            var resize = document.getElementById("resize");
             var left = document.getElementById("left");
             var right = document.getElementById("right");
             var box = document.getElementById("box");
@@ -238,12 +260,13 @@
 
     #resize {
         width: 2px;
-        height:calc(100vh - 250px);
+        height: calc(100vh - 250px);
         cursor: w-resize;
         float: left;
         border: 1px solid #E4E7ED;
     }
-    .card-header{
-        height:46px;
+
+    .card-header {
+        height: 46px;
     }
 </style>
