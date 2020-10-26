@@ -14,8 +14,14 @@
         </el-row>
         <el-tabs v-model="activeName" @tab-click="handleClick">
             <el-tab-pane label="流程管理" name="first">
-                <div class="tree-drag">
-                    <el-tree
+                <el-row :gutter="0" id="box">
+                    <el-col :span="18" id="left">
+                        <el-col :span="10">
+                            <div class="card-header">
+                                工具箱
+                            </div>
+                            <div class="horizon_layout">
+ <el-tree
                             :data="treeData1"
                             ref="tree1"
                             class="tree"
@@ -26,15 +32,51 @@
                             @node-drag-start="handleDragstart"
                             @node-drag-end="handleDragend"
                     ></el-tree>
-                    <el-tree
-                            :data="treeData2"
-                            ref="tree2"
-                            class="tree"
-                            node-key="id"
-                            draggable
-                            default-expand-all
-                            :allow-drop="returnTrue"
-                    ></el-tree>
+                            </div>
+                        </el-col>
+                        <el-col :span="14">
+                            <div class="card-header" style="position:relative">
+                                <div>
+                                    <span>流程栏</span>
+
+                                </div>
+                            </div>
+                            <div class="horizon_layout">
+  <el-tree
+                                :data="treeData2"
+                                ref="tree2"
+                                class="tree"
+                                node-key="id"
+                                draggable
+                                default-expand-all
+                                :allow-drop="returnTrue"
+                        >
+                        </el-tree>
+                            </div>
+                        </el-col>
+                    </el-col>
+
+                    <el-col :span="6" id="right">
+                        <div class="card-header">
+                            属性编辑
+                        </div>
+                        <div id="resize"></div>
+                        <div class="horizon_layout">
+
+                        </div>
+                    </el-col>
+                </el-row>
+                <div class="tree-drag">
+
+
+
+<!--                    <div class="treewrapper">-->
+<!--                        <div class="card-header" style="position:relative">-->
+<!--                            <div>-->
+<!--                                <span>属性编辑</span>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
                 </div>
 
             </el-tab-pane>
@@ -136,11 +178,18 @@
 </script>
 
 <style scoped>
-.tree {
-  display: inline-block;
-  vertical-align: top;
-  width: 40%;
-  height: 440px;
-  border: 1.2px solid #E4E7ED;
-}
+    /*.treewrapper {*/
+    /*    display: inline-block;*/
+    /*    vertical-align: top;*/
+    /*    width: 33%;*/
+    /*    height: 440px;*/
+    /*    border: 1.2px solid #E4E7ED;*/
+    /*}*/
+    .tree {
+        display: inline-block;
+        vertical-align: top;
+         /*width: 100%;*/
+        /*border-left: 1px solid #E4E7ED;*/
+        /*border-right: 1px solid #E4E7ED;*/
+    }
 </style>

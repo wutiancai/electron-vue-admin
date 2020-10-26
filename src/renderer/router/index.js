@@ -75,7 +75,7 @@ export const constantRoutes = [
             {
                 path: 'datapack',
                 name: 'datapack',
-                // component: () => import('@/views/datapack/datapack'),
+                component: () => import('@/views/annotation/index'),
                 meta: {title: '工具', icon: 'el-icon-s-tools', keepAlive: true}
             }
         ]

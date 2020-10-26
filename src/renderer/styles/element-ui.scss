@@ -193,7 +193,7 @@
 /*运行显示*/
 .horizon_layout {
   height:calc(100vh - 250px);
-  border:1.2px solid #E4E7ED
+  border:1px solid #E4E7ED
 }
 .app-container-tab {
   //margin-top: -20px;
@@ -213,4 +213,9 @@
 .table-tr-opt{
   display:inline-block;
   float:right;padding:5px 0;
+}
+
+/*radio*/
+.el-radio-group {
+  vertical-align: initial;
 }
